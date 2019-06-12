@@ -3,4 +3,4 @@ project(CPU_Simulator)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(CPU_Simulator main.cpp)
+add_executable(CPU_Simulator main.cpp main_test.cpp main.h)
