@@ -20,13 +20,14 @@ SCENARIO("Working on a simple MIPS processor that turns-on a LED")
             MIPS_CPU my_cpu(data_memory_size, program_memory_size);
             GPIO my_gpio(number_ports, number_of_pins_per_port);
 
-            my_cpu.wire(0x55, "MCUCR");
-            my_cpu.wire(0x25, "PORTB");
-            my_cpu.wire(0x24, "DDRB");
-            my_cpu.wire(0x23, "PINB");
+            my_cpu.wire("DATA", 0x55, "MCUCR");
+            my_cpu.wire("DATA", 0x25, "PORTB");
+            my_cpu.wire("DATA", 0x24, "DDRB");
+            my_cpu.wire("DATA", 0x23, "PINB");
 
             my_soc.add(my_cpu);
             my_soc.add(my_gpio);
+
 
             my_soc.wire(6, my_cpu.get_id("reset"));
             my_soc.wire(7, my_cpu.get_id("GND"));
@@ -41,7 +42,7 @@ SCENARIO("Working on a simple MIPS processor that turns-on a LED")
 
             THEN("A program is loaded in the program memory of the SoC")
             {
-                const string code_path = "code.hex";
+                const std:: string code_path = "code.hex";
                 my_soc.load_program(code_path);
                 REQUIRE(my_workspace.execute_all());
             }
