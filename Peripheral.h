@@ -1,15 +1,17 @@
-//
-// Created by joseph on 6/14/19.
-//
-
 #ifndef CPU_SIMULATOR_PERIPHERAL_H
 #define CPU_SIMULATOR_PERIPHERAL_H
 
 #include "HardwareBlock.h"
+#include <string>
 
 class Peripheral : public HardwareBlock
 {
+private:
 
+
+public:
+    Peripheral();
+    int reg(std::string reg);
 };
 
 

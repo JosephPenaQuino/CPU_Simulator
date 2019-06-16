@@ -9,8 +9,8 @@ class MIPS_CPU : public CPU
 private:
 
 public:
-    MIPS_CPU(int data_memory_size, int program_memory_size);
-    void wire(std::string type, int address, std::string reg);
+    MIPS_CPU(int data_mem_size, int program_mem_size);
+
 };
 
 

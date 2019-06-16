@@ -11,5 +11,7 @@ private:
 
 public:
     GPIO(const int number_ports, const int number_pins_per_port[]);
-    int get_id(std::string reg);
+    int pin_id(int reg);
 };
+
+#endif
