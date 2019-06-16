@@ -1,7 +1,8 @@
+
 #ifndef CPU_SIMULATOR_SOC_H
 #define CPU_SIMULATOR_SOC_H
 
-#include "HardwareBlock.h"
+#include    "HardwareBlock.h"
 #include <string>
 
 class SoC

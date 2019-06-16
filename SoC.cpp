@@ -1,3 +1,4 @@
+
 #include "SoC.h"
 
 SoC::SoC(int pins_number)
