@@ -1,11 +1,7 @@
 #include "MIPS_CPU.h"
 
-MIPS_CPU::MIPS_CPU(int data_memory_size, int program_memory_size)
+MIPS_CPU::MIPS_CPU(int data_mem_size, int program_mem_size) : CPU(data_mem_size, program_mem_size)
 {
 
 }
 
-void MIPS_CPU::wire(std::string type, int address, std::string reg)
-{
-
-}

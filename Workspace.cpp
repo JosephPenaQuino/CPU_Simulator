@@ -1,16 +1,23 @@
 #include "Workspace.h"
 
-Workspace::Workspace()
-{
-
-}
+Workspace::Workspace() = default;
 
 void Workspace::add(SoC *new_soc)
 {
 
 }
 
-bool Workspace::execute_all()
+int Workspace::get_size()
+{
+    return 0;
+}
+
+SoC *Workspace::get_SoC(int key)
+{
+    return nullptr;
+}
+
+bool Workspace::execute_all(double time_lapse, int frequency)
 {
     return false;
 }
