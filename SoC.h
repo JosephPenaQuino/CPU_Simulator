@@ -7,7 +7,6 @@
 #include <string>
 #include <vector>
 
-
 class SoC
 {
 private:
@@ -23,6 +22,5 @@ public:
     void load_program(std::string path);
     void execute(double time_lapse, int freq);
 };
-
 
 #endif //CPU_SIMULATOR_SOC_H

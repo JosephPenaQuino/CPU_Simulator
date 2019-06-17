@@ -2,8 +2,9 @@
 #define CPU_SIMULATOR_WORKSPACE_H
 
 #include <list>
-
-class SoC;
+#include <iterator>
+#include <thread>
+#include "SoC.h"
 
 class Workspace
 {
