@@ -10,9 +10,6 @@ SCENARIO("Working on a simple MIPS processor that turns-on a LED")
         SoC my_soc(number_pins);
         my_workspace.add(&my_soc);
 
-        REQUIRE(my_workspace.get_size() == 1);
-        REQUIRE(my_workspace.get_SoC(0) == &my_soc);
-
         WHEN("The SoC owns a MIPS processor and a GPIO")
         {
             const int number_ports = 1;
@@ -22,9 +19,6 @@ SCENARIO("Working on a simple MIPS processor that turns-on a LED")
 
             MIPS_CPU my_cpu(data_memory_size, program_memory_size);
             GPIO my_gpio(number_ports, number_of_pins_per_port);
-
-            REQUIRE(my_cpu.get_data_mem_size() == 2000);
-            REQUIRE(my_cpu.get_prog_mem_size() == 1600);
 
             my_soc.add(&my_cpu);
             my_soc.add(&my_gpio);
@@ -51,6 +45,10 @@ SCENARIO("Working on a simple MIPS processor that turns-on a LED")
                 my_soc.load_program(code_path);
                 int time_lapse = 10;
                 int frequency = 1000;
+                REQUIRE(my_workspace.get_size() == 1);
+                REQUIRE(my_workspace.get_SoC(0) == &my_soc);
+                REQUIRE(my_cpu.get_data_mem_size() == 2000);
+                REQUIRE(my_cpu.get_prog_mem_size() == 1600);
                 REQUIRE(my_workspace.execute_all(time_lapse, frequency));
             }
         }
