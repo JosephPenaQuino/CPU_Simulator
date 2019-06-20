@@ -4,6 +4,8 @@
 #include "HardwareBlock.h"
 #include <string>
 
+#define PeripheralId 2
+
 class Peripheral : public HardwareBlock
 {
 private:
@@ -12,6 +14,7 @@ private:
 public:
     Peripheral();
     int reg(std::string reg);
+    int type();
 };
 
 
