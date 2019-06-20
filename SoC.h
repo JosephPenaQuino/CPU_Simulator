@@ -6,6 +6,7 @@
 #include "CPU.h"
 #include <string>
 #include <vector>
+#include <iterator>
 
 class SoC
 {
@@ -20,7 +21,7 @@ public:
     void ext_wire(int pin, int reg);
     void int_wire(int cpu_reg, int per_reg);
     void load_program(std::string path);
-    void execute(double time_lapse, int freq);
+    bool execute(double time_lapse, int freq);
 };
 
 #endif //CPU_SIMULATOR_SOC_H
