@@ -5,6 +5,8 @@
 #include <string>
 #include "HardwareBlock.h"
 
+#define CPUId 1
+
 class CPU : public HardwareBlock
 {
 private:
@@ -21,6 +23,7 @@ public:
     int get_id(std::string reg);
     int get_data_mem_size();
     int get_prog_mem_size();
+    bool execute_instruction();
 
 };
 
