@@ -1,13 +1,14 @@
-//
-// Created by albin on 13/06/2019.
-//
 
 #ifndef CPU_SIMULATOR_HARDWAREBLOCK_H
 #define CPU_SIMULATOR_HARDWAREBLOCK_H
 
+#define HardwareBlockId 0
 
-class HardwareBlock {
-
+class HardwareBlock
+{
+private:
+public:
+    virtual int type();
 };
 
 

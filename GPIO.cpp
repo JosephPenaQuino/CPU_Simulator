@@ -1,5 +1,11 @@
-//
-// Created by albin on 13/06/2019.
-//
-
 #include "GPIO.h"
+
+GPIO::GPIO(const int number_ports, const int *number_pins_per_port)
+{
+
+}
+
+int GPIO::pin_id(int reg)
+{
+    return 0;
+}
