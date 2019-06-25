@@ -4,16 +4,28 @@
 
 #include <string>
 #include "HardwareBlock.h"
+#include "Instruction.h"
+#include "read_write_mem.h"
+#include "read_mem.h"
 
 #define CPUId 1
+
+struct CPU_state
+{
+    bool error;
+    bool any_change;
+
+    CPU_state();
+};
 
 class CPU : public HardwareBlock
 {
 private:
     int data_mem_size;
     int prog_mem_size;
-    int * data_mem;
-    int * prog_mem;
+
+    read_write_mem<int> data_mem;
+    read_mem<Instruction> prog_mem;
 
     int program_counter;
 
@@ -23,9 +35,9 @@ public:
     int get_id(std::string reg);
     int get_data_mem_size();
     int get_prog_mem_size();
-    bool execute_instruction();
+    CPU_state execute_instruction();
+    Instruction get_instr();
 
 };
-
 
 #endif //CPU_SIMULATOR_CPU_H
