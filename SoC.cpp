@@ -39,13 +39,13 @@ bool SoC::execute(double time_lapse, int freq)
 
     int num_cycles = (int)(time_lapse*freq);
     std::vector<CPU*>::iterator current_CPU;
-    bool state;
+    CPU_state cpu_state;
 
     for (int i = 0; i < num_cycles; ++i)
         for (current_CPU = CPUs.begin(); current_CPU < CPUs.end(); current_CPU++)
         {
-            state = (*current_CPU)->execute_instruction();
-            if (!state)
+            cpu_state = (*current_CPU)->execute_instruction();
+            if (cpu_state.error)
                 return false;
         }
 
