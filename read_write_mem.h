@@ -1,7 +1,3 @@
-//
-// Created by albin on 13/06/2019.
-//
-
 #ifndef CPU_SIMULATOR_READ_WRITE_MEM_H
 #define CPU_SIMULATOR_READ_WRITE_MEM_H
 #include <vector>
@@ -14,6 +10,7 @@ private:
     vector<T> data;
     int size;
 public:
+    read_write_mem(int size);
     read_write_mem(vector<T>, int size);
     void load_value(int address);
     void write_value(int address, T value);
@@ -36,4 +33,10 @@ void read_write_mem<T>::write_value(int address, T value)
         data.emplace_back(address);
     }
 }
+
+template<typename T>
+read_write_mem<T>::read_write_mem(int size) {
+
+}
+
 #endif //CPU_SIMULATOR_READ_WRITE_MEM_H
