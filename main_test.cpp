@@ -13,7 +13,7 @@ SCENARIO("Working on a simple MIPS processor that turns-on a LED")
         WHEN("The SoC owns a MIPS processor and a GPIO")
         {
             const int number_ports = 1;
-            const int number_of_pins_per_port[number_ports] = {8};
+            const int number_of_pins_per_port[number_ports] = {5};
             const int data_memory_size = 2000;
             const int program_memory_size = 1600;
 
