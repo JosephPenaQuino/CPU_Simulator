@@ -14,7 +14,7 @@ int Workspace::get_size()
 
 SoC *Workspace::get_SoC(int key)
 {
-    std::list<SoC*>::iterator ptr = SoC_list.begin();
+    auto ptr = SoC_list.begin();
     advance(ptr, key);
 
     return *ptr;
@@ -22,10 +22,10 @@ SoC *Workspace::get_SoC(int key)
 
 bool Workspace::execute_all(double time_lapse, int frequency)
 {
-    std::list<SoC*>::iterator ptr;
+    std::list<SoC*>::iterator current_SoC;
 
-    for (ptr = SoC_list.begin(); ptr != SoC_list.end(); ++ptr)
-        (*ptr)->execute(time_lapse, frequency);
+    for (current_SoC = SoC_list.begin(); current_SoC != SoC_list.end(); ++current_SoC)
+        (*current_SoC)->execute(time_lapse, frequency);
 
     return true;
 }
