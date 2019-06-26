@@ -6,4 +6,4 @@ set(CMAKE_CXX_FLAGS -pthread)
 
 
 
-add_executable(CPU_Simulator main.cpp main_test.cpp main.h SoC.cpp SoC.h Workspace.cpp Workspace.h MIPS_CPU.cpp MIPS_CPU.h GPIO.cpp GPIO.h Peripheral.cpp Peripheral.h HardwareBlock.cpp HardwareBlock.h CPU.cpp CPU.h Instruction.cpp Instruction.h)
+add_executable(CPU_Simulator main.cpp main_test.cpp main.h Memory.cpp Memory.h read_mem.h read_mem.cpp read_write_mem.cpp read_write_mem.h SoC.cpp SoC.h Workspace.cpp Workspace.h MIPS_CPU.cpp MIPS_CPU.h GPIO.cpp GPIO.h Peripheral.cpp Peripheral.h HardwareBlock.cpp HardwareBlock.h CPU.cpp CPU.h Instruction.cpp Instruction.h)
