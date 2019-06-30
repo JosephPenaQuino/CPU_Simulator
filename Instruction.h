@@ -3,7 +3,6 @@
 
 #include <cstdint>
 #include <cmath>
-
 #include "CPU.h"
 
 struct CompR
@@ -97,4 +96,3 @@ public:
 };
 
 #endif
-

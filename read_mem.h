@@ -7,7 +7,6 @@ using namespace std;
 template< typename T>
 class read_mem {
 private:
-    int size;
     vector<T> instructions_list;
 public:
     read_mem(int size)
@@ -16,7 +15,6 @@ public:
     }
 
     T get_instructions(int address) {
-        return T();
     }
 };
 
