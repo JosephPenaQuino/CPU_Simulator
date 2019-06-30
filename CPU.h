@@ -5,6 +5,7 @@
 #include <string>
 #include "HardwareBlock.h"
 #include "Instruction.h"
+//class Instruction;
 #include "read_write_mem.h"
 #include "read_mem.h"
 
@@ -29,7 +30,7 @@ private:
     read_mem<Instruction> prog_mem;
 
     int program_counter;
-
+    int reg_file[16];
 
 
 public:
@@ -49,6 +50,7 @@ public:
     void set_reg(uint32_t address, uint32_t value);
 
     void print_data_memory();
+    void load_instructions(std::vector<Instruction> program);
 };
 
 #endif //CPU_SIMULATOR_CPU_H
