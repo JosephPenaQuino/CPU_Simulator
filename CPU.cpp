@@ -30,6 +30,7 @@ int CPU::data_reg(int reg)
 CPU_state CPU::execute_instruction()
 {
     Instruction current_instruction = this->get_instr();
+    current_instruction.apply(this);
     return CPU_state();
 }
 

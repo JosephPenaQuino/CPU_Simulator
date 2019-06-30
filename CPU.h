@@ -2,6 +2,7 @@
 #ifndef CPU_SIMULATOR_CPU_H
 #define CPU_SIMULATOR_CPU_H
 
+#include <cstdint>
 #include <string>
 #include "HardwareBlock.h"
 #include "Instruction.h"
@@ -9,6 +10,7 @@
 #include "read_mem.h"
 
 #define CPUId 1
+
 
 struct CPU_state
 {
@@ -29,6 +31,8 @@ private:
 
     int program_counter;
 
+
+
 public:
     CPU(int data_memory_size, int program_memory_size);
     int data_reg(int reg);
@@ -38,6 +42,13 @@ public:
     CPU_state execute_instruction();
     Instruction get_instr();
 
+    friend void apply(CPU * my_cpu);
+
+    uint32_t get_data(uint32_t address);
+    void set_data(uint32_t address, uint32_t value);
+
+    uint32_t get_reg(uint32_t address);
+    void set_reg(uint32_t address, uint32_t value);
 };
 
 #endif //CPU_SIMULATOR_CPU_H
