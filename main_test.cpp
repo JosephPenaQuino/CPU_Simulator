@@ -8,12 +8,17 @@ SCENARIO("Working on a simple MIPS processor that turns-on a LED")
         const int program_memory_size = 32;
         MIPS_CPU my_cpu(data_memory_size, program_memory_size);
 
+        std::vector<Instruction> program;
+        program.emplace_back(Instruction_sw(0, 0, 0));
+//        program.emplace_back(Instruction_)
+        my_cpu.load_instructions(program);
+
+        std::cout << "---------------------------" << std::endl;
+        std::cout << "Data Memory before program:" << std::endl;
         my_cpu.print_data_memory();
-
         my_cpu.execute_instruction();
-        my_cpu.execute_instruction();
-        my_cpu.execute_instruction();
-
+        std::cout << "---------------------------" << std::endl;
+        std::cout << "Data Memory after program:" << std::endl;
         my_cpu.print_data_memory();
     }
 
@@ -65,7 +70,7 @@ SCENARIO("Working on a simple MIPS processor that turns-on a LED")
                 REQUIRE(my_workspace.get_SoC(0) == &my_soc);
                 REQUIRE(my_cpu.get_data_mem_size() == 2000);
                 REQUIRE(my_cpu.get_prog_mem_size() == 1600);
-                REQUIRE(my_workspace.execute_all(time_lapse, frequency));
+//                REQUIRE(my_workspace.execute_all(time_lapse, frequency));
             }
         }
     }
