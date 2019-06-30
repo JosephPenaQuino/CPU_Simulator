@@ -6,9 +6,10 @@ template<typename T>
 class Memory {
 private:
     T * my_data;
-    int size;
+
 
 protected:
+    int size;
     void store(int address, T value);
     T load(int address);
 
@@ -20,7 +21,7 @@ public:
 template<typename T>
 Memory<T>::Memory(int size) : size{size}
 {
-    my_data = new T[size];
+    my_data = new T[size] {};
 }
 
 template<typename T>
