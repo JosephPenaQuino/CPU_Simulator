@@ -10524,7 +10524,7 @@ namespace Catch {
         m_reporter->fatalErrorEncountered(message);
 
         // Don't rebuild the result -- the stringification itself can cause more fatal errors
-        // Instead, fake a result data.
+        // Instead, fake a result my_data.
         AssertionResultData tempResult( ResultWas::FatalErrorCondition, { false } );
         tempResult.message = message;
         AssertionResult result(m_lastAssertionInfo, tempResult);
@@ -12856,7 +12856,7 @@ namespace {
                     hexEscapeChar(os, c);
                     break;
                 }
-                // The header is valid, check data
+                // The header is valid, check my_data
                 // The next encBytes bytes must together be a valid utf-8
                 // This means: bitpattern 10XX XXXX and the extracted value is sane (ish)
                 bool valid = true;
