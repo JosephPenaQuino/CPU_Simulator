@@ -11,6 +11,7 @@
 #include "Peripheral.h"
 #include "GPIO.h"
 #include "Workspace.h"
+#include "MIPS_Instructions.h"
 
 
 #endif //CPU_SIMULATOR_MAIN_H
