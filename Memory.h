@@ -1,13 +1,14 @@
-//
-// Created by albin on 13/06/2019.
-//
-
 #ifndef CPU_SIMULATOR_MEMORY_H
 #define CPU_SIMULATOR_MEMORY_H
 
-
+#include <vector>
+template<typename T>
 class Memory {
-
+private:
+    std::vector<T> data;
+    int size;
+public:
+Memory(int size) : size{size}{};
 };
 
 

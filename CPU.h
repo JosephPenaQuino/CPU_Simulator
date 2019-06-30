@@ -1,4 +1,3 @@
-
 #ifndef CPU_SIMULATOR_CPU_H
 #define CPU_SIMULATOR_CPU_H
 
