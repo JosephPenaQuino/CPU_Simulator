@@ -24,11 +24,21 @@ it is a General purpose input/output(GPIO).
 GPIO is implemented and defined by the designer.
 
 ### MIPS
+Microprocessor without Interlocked Pipelined Stages (MIPS) is a Reduced instruction set computer(RISC), it means a architecture of 
+interlacing by instruction.
+There are multiple versions of MIPS. In this project we use a 32 bit.
 
-
+The role that MIPS architecture assumes in the project is essential to give a interlacing architecture CPU
+to SoC, using a MIPS instructions set 32 bits.
+ 
 ### Assembly
+It is a low programming language, it is composed by instructions directly to hardware blocks or machine architecture
+It has a one statement per instruction,  the statements are directives to locate the block to change register by an instruction.
+In addition of term, each assembly language is specific to particular computer architecture and operating system.
 
 ### Simulators
+
+
 
 ## Objectives
 
