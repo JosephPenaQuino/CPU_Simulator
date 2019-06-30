@@ -2,6 +2,22 @@
 
 SCENARIO("Working on a simple MIPS processor that turns-on a LED")
 {
+    GIVEN("Testing Instructions")
+    {
+        const int data_memory_size = 16;
+        const int program_memory_size = 32;
+        MIPS_CPU my_cpu(data_memory_size, program_memory_size);
+
+        my_cpu.print_data_memory();
+
+        my_cpu.execute_instruction();
+        my_cpu.execute_instruction();
+        my_cpu.execute_instruction();
+
+        my_cpu.print_data_memory();
+    }
+
+
     GIVEN("A work space with only one SoC")
     {
         const int number_pins = 8;

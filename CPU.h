@@ -45,9 +45,10 @@ public:
 
     uint32_t get_data(uint32_t address);
     void set_data(uint32_t address, uint32_t value);
-
     uint32_t get_reg(uint32_t address);
     void set_reg(uint32_t address, uint32_t value);
+
+    void print_data_memory();
 };
 
 #endif //CPU_SIMULATOR_CPU_H

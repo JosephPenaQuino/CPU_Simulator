@@ -40,4 +40,29 @@ Instruction CPU::get_instr() {
     return instr;
 }
 
+void CPU::print_data_memory()
+{
+
+}
+
+uint32_t CPU::get_data(uint32_t address)
+{
+    return 0;
+}
+
+void CPU::set_data(uint32_t address, uint32_t value)
+{
+
+}
+
+uint32_t CPU::get_reg(uint32_t address)
+{
+    return 0;
+}
+
+void CPU::set_reg(uint32_t address, uint32_t value)
+{
+
+}
+
 CPU_state::CPU_state() : error{true}, any_change{false} {}

@@ -14,10 +14,10 @@ peripherals.
 
 This block is subdivided in hardware blocks depending the type of SoC.
 To achieve our purposes, we implement a CPU, RAM and ROM memories and Peripherals.
-* Central processing unit (CPU): Is the electronic circuitry within a computer that control instructions and data flow.
+* Central processing unit (CPU): Is the electronic circuitry within a computer that control instructions and my_data flow.
 In this project we use a Microprocessor without Interlocked Pipelined Stages (MIPS).
-* Read memory (RM): It is a memory segment that only allows to read memory by  data bus addresses.
-* Read write memory (RWM): It is a memory segment that can be read from and written too by data bus addresses.
+* Read memory (RM): It is a memory segment that only allows to read memory by  my_data bus addresses.
+* Read write memory (RWM): It is a memory segment that can be read from and written too by my_data bus addresses.
 * Peripheral: Is a hardware input or output device, that gives a computer additional functionality, the implement of this
 it is a General purpose input/output(GPIO).
 * General purpose input/output (GPIO):  Is a digital pin on a integrated circuit controllable by the user at run time,
