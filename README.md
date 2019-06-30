@@ -42,9 +42,12 @@ In addition of term, each assembly language is specific to particular computer a
 
 ## Objectives
 
-* XD
-* XD
-* XD
+* Simulate a CPU in language C++, using an architecture SoC and MIPS.
+* Implement a CPU simulation synthesize and apply concurrent programming, oriental object programming, generic programming, 
+standard library C++. 
+* Merge C++ programming tools with a CPU and do possible the simulation.
+* Change data in a virtual memory to interact with peripherals (our purpose is introduce a binary code 
+and get a sight of LED ON/OFF and read an input.
 
 ## Installation
 
@@ -61,7 +64,9 @@ In addition of term, each assembly language is specific to particular computer a
 #### Assembly
 
 
+
 #### Binary Code
+
 
 
 ### Case 2 : Turn on LED
