@@ -13,7 +13,7 @@ peripherals.
 #### Hardware block
 
 This block is subdivided in hardware blocks depending the type of SoC.
-To achieve our purposes, we implement a CPU, RAM and ROM memories and Peripherals.
+To achieve our purposes, we implement a CPU, RM and RWM memories and Peripherals.
 * Central processing unit (CPU): Is the electronic circuitry within a computer that control instructions and my_data flow.
 In this project we use a Microprocessor without Interlocked Pipelined Stages (MIPS).
 * Read memory (RM): It is a memory segment that only allows to read memory by  my_data bus addresses.
