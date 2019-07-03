@@ -52,4 +52,18 @@ public:
     void apply(CPU &my_cpu) override;
 };
 
+class Instruction_lui : public Instruction_I
+{
+public:
+    Instruction_lui(uint32_t Rt, uint32_t immediate);
+    void apply(CPU &my_cpu) override;
+};
+
+class Instruction_ori: public Instruction_I
+{
+public:
+    Instruction_ori(uint32_t Rs, uint32_t Rt, uint32_t immediate);
+    void apply(CPU &my_cpu) override;
+};
+
 #endif //CPU_SIMULATOR_MIPS_INSTRUCTIONS_H

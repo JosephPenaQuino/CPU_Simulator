@@ -27,11 +27,10 @@ private:
     int prog_mem_size;
 
     read_write_mem<int> data_mem;
-    read_mem<Instruction> prog_mem;
+    read_mem<Instruction*> prog_mem;
 
     int program_counter;
     int reg_file[16];
-
 
 public:
     CPU(int data_memory_size, int program_memory_size);
@@ -40,7 +39,7 @@ public:
     int get_data_mem_size();
     int get_prog_mem_size();
     CPU_state execute_instruction();
-    Instruction get_instr();
+    Instruction * get_instr();
 
     friend void apply(CPU * my_cpu);
 
@@ -50,7 +49,7 @@ public:
     void set_reg(uint32_t address, uint32_t value);
 
     void print_data_memory();
-    void load_instructions(std::vector<Instruction> program);
+    void load_instructions(std::vector<Instruction*> program);
 };
 
 #endif //CPU_SIMULATOR_CPU_H

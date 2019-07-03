@@ -19,9 +19,9 @@ int CPU::get_prog_mem_size()
 CPU::CPU(int data_memory_size, int program_memory_size) :   data_mem_size{data_memory_size},
                                                             prog_mem_size{program_memory_size},
                                                             program_counter{0},
-                                                            prog_mem{read_mem<Instruction>(program_memory_size)},
+                                                            prog_mem{read_mem<Instruction*>(program_memory_size)},
                                                             data_mem{read_write_mem<int>(data_memory_size)},
-                                                            reg_file{1} {}
+                                                            reg_file{0} {}
 
 int CPU::data_reg(int reg)
 {
@@ -30,13 +30,14 @@ int CPU::data_reg(int reg)
 
 CPU_state CPU::execute_instruction()
 {
-    Instruction current_instruction = this->get_instr();
-    current_instruction.apply(*this);
+    Instruction * current_instruction = this->get_instr();
+    current_instruction->apply(*this);
+
     return CPU_state();
 }
 
-Instruction CPU::get_instr() {
-    Instruction instr = prog_mem.get_instructions(program_counter);
+Instruction * CPU::get_instr() {
+    Instruction *instr = prog_mem.get_instructions(program_counter);
     program_counter++;
     return instr;
 }
@@ -69,7 +70,7 @@ void CPU::set_reg(uint32_t address, uint32_t value)
     reg_file[address] = value;
 }
 
-void CPU::load_instructions(std::vector<Instruction> program)
+void CPU::load_instructions(std::vector<Instruction*> program)
 {
     prog_mem.load_instructions(program);
 }

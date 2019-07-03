@@ -8,14 +8,22 @@ SCENARIO("Working on a simple MIPS processor that turns-on a LED")
         const int program_memory_size = 32;
         MIPS_CPU my_cpu(data_memory_size, program_memory_size);
 
-        std::vector<Instruction> program;
-        program.emplace_back(Instruction_sw(0, 0, 0));
-//        program.emplace_back(Instruction_)
+        std::vector<Instruction*> program;
+        // TODO: Use make_unique
+        program.emplace_back(new Instruction_lui(0x01, 0));             // reg[0x01] <- 0 * (2^16)
+        program.emplace_back(new Instruction_ori(0x0A, 0x01, 0x102));   // reg[0x0A] <- reg[0x01] | 0x102
+        program.emplace_back(new Instruction_lui(0x01, 0));             // reg[0x01] <- 0 * (2^16)
+        program.emplace_back(new Instruction_ori(0x09, 0x01, 0x07));    // reg[0x09] <- reg[0x01] | 0x07
+        program.emplace_back(new Instruction_sw(0x09, 0x0A, 0));        // MEM[reg[0x0A]] <- reg[0x0A] + 0
         my_cpu.load_instructions(program);
 
         std::cout << "---------------------------" << std::endl;
         std::cout << "Data Memory before program:" << std::endl;
         my_cpu.print_data_memory();
+        my_cpu.execute_instruction();
+        my_cpu.execute_instruction();
+        my_cpu.execute_instruction();
+        my_cpu.execute_instruction();
         my_cpu.execute_instruction();
         std::cout << "---------------------------" << std::endl;
         std::cout << "Data Memory after program:" << std::endl;
@@ -45,9 +53,9 @@ SCENARIO("Working on a simple MIPS processor that turns-on a LED")
             my_soc.add(&my_gpio);
 
             my_soc.int_wire(my_cpu.data_reg(0x55), my_gpio.reg("MCUCR"));
-            my_soc.int_wire(my_cpu.data_reg(0x25), my_gpio.reg("PORTB"));
-            my_soc.int_wire(my_cpu.data_reg(0x24), my_gpio.reg("DDRB"));
-            my_soc.int_wire(my_cpu.data_reg(0x23), my_gpio.reg("PINB"));
+            my_soc.int_wire(my_cpu.data_reg(0x0E), my_gpio.reg("PORTB"));
+            my_soc.int_wire(my_cpu.data_reg(0x0D), my_gpio.reg("DDRB"));
+            my_soc.int_wire(my_cpu.data_reg(0x0F), my_gpio.reg("PINB"));
 
             my_soc.ext_wire(6, my_cpu.get_id("reset"));
             my_soc.ext_wire(7, my_cpu.get_id("GND"));

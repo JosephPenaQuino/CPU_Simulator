@@ -11,7 +11,7 @@ private:
     using Memory<T>::size;
 public:
     explicit read_mem(int size);
-    void load_instructions(std::vector<T>);
+    void load_instructions(std::vector<T> &);
     T get_instructions(int address);
 };
 
@@ -25,7 +25,7 @@ T read_mem<T>::get_instructions(int address)
 }
 
 template<typename T>
-void read_mem<T>::load_instructions(std::vector<T> instructions)
+void read_mem<T>::load_instructions(std::vector<T> &instructions)
 {
     if (instructions.size() <= size)
     {

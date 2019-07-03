@@ -47,19 +47,35 @@ void Instruction_add::apply(CPU &my_cpu)
     my_cpu.set_reg(comp.comp_r.Rd, sum);
 }
 
+// Store Word: 43
 Instruction_sw::Instruction_sw(uint32_t Rs, uint32_t Rt, uint32_t offset) : Instruction_I(0b101011, Rs, Rt, offset) {}
-
 void Instruction_sw::apply(CPU &my_cpu)
 {
     uint32_t address = my_cpu.get_reg(comp.comp_i.Rs) + my_cpu.get_reg(comp.comp_i.comp_const);
     my_cpu.set_data(address, my_cpu.get_reg(comp.comp_i.Rt));
 }
 
+// Load Word: 35
 Instruction_lw::Instruction_lw(uint32_t Rs, uint32_t Rt, uint32_t offset) : Instruction_I(0b100011, Rs, Rt, offset) {}
-
 void Instruction_lw::apply(CPU &my_cpu)
 {
     uint32_t address = my_cpu.get_reg(comp.comp_i.Rs) + my_cpu.get_reg(comp.comp_i.comp_const);
     uint32_t value = my_cpu.get_data(address);
     my_cpu.set_reg(my_cpu.get_reg(comp.comp_i.Rt), value);
+}
+
+// Load Upper Immediate: 15
+Instruction_lui::Instruction_lui(uint32_t Rt, uint32_t immediate) : Instruction_I(0b001111, 0b00000, Rt, immediate) {}
+void Instruction_lui::apply(CPU &my_cpu)
+{
+    uint32_t value = comp.comp_i.comp_const * (uint32_t)pow(2, 16);
+    my_cpu.set_reg(comp.comp_i.Rt, value);
+}
+
+// Or Immediate: 13
+Instruction_ori::Instruction_ori(uint32_t Rs, uint32_t Rt, uint32_t immediate) : Instruction_I(0b001101, Rs, Rt, immediate) {}
+void Instruction_ori::apply(CPU &my_cpu)
+{
+    uint32_t value = my_cpu.get_reg(comp.comp_i.Rt) | comp.comp_i.comp_const;
+    my_cpu.set_reg(comp.comp_i.Rs, value);
 }
