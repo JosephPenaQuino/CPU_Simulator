@@ -62,11 +62,38 @@ and get a sight of LED ON/OFF and read an input.
 
     
 #### Assembly
-
+    ; -------------------------------------------
+    ;
+    ;	Title:	Turn on Led
+    ;
+    ;	Cofigurations:
+    ;		-	Led connected at pin 0
+    ;		- 	DDRB 	:	0x0D
+    ;		-	PORTB	:	0x0E
+    ; -------------------------------------------
+    
+    ; Put 0x01 at MEM[0x0D]
+    lui $1, 0x0000		; $1 <- 0 * (2^16)
+    ori $8, $1, 0x0D	; $8 <- $1 | 0x0D
+    ori $9, $1, 0x01	; $9 <- $1 | 0x01
+    sw	$8, 0($9)		; MEM[$8+0] <- $9
+    
+    ; Clean registers 8
+    lui $8, 0x0000		; %8 <- 0 * (2^16)
+    
+    ; Put 0x01 at MEM[0x0E]
+    ori $8, $1, 0x0E	; $8 <- $1 | 0x0E
+    sw	$8, 0($9)		; MEM[$8+0] <- $9
 
 #### Binary Code
-
-
+    
+    3c010000
+    3428000d
+    34290001
+    ad280000
+    3c080000
+    3428000e
+    ad280000
 
 ### Case 2 : Modify data memory
 
@@ -85,11 +112,36 @@ and get a sight of LED ON/OFF and read an input.
 
 
 #### Assembly
-
+    ; -------------------------------------------
+    ;
+    ;	Title:	Read Pin
+    ;
+    ;	Cofigurations:
+    ;		-	Readed Pin at pin 0
+    ;		- 	DDRB 	:	0x0D
+    ;		-	PORTB	:	0x0E
+    ; -------------------------------------------
+    
+    ; This program demonstrates a Read Pin
+    ; Data Segment
+    lui $16, 4097  ;0x10010000 Base address
+    lw $9, 0($16)  ; Using load word instruction
+    lw $10, 4($16)
+    lw $11, 8($16)
+    lw $12, 12($16)
+    lw $13, 12($16)
+    ori $2, $0, 10
+    lui $16, 0x00000000 ;Clean register
 
 #### Binary Code
 
-
+    3c101001
+    8e090000
+    8e0b0008
+    8e0c000c
+    8e0d000c
+    3402000a
+    3c100000
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
