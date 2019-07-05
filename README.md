@@ -9,7 +9,8 @@ a System on chip (SoC), all of that through MIPS architecture.
 In addition, to managed the efficient simulation we implement a TDD (Test Driven Development), that allows to
 "shape" CPU and do. 
 
- ![Figure1](instructionRIJ)
+ ![instructionRIJ](https://user-images.githubusercontent.com/49255376/60747787-9275c280-9f4d-11e9-9024-dfedc6062ba4.png)
+
  
 ### CPU COMPONENTS
 #### System on Chip
