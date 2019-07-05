@@ -24,7 +24,7 @@ class CPU : public HardwareBlock
 {
 private:
     int data_mem_size;
-    int prog_mem_size;
+    int prog_mem_size; //
 
     read_write_mem<int> data_mem;
     read_mem<Instruction*> prog_mem;

@@ -1,9 +1,16 @@
 # Central Processing Unit Simulator
 
 Central processing unit (CPU) Simulator is the final project of Objected Oriented Programming Course at UTEC.
+
 ## Background
-Our project allows a real CPU simulation. To achieve our purpose we need to define all parts of CPU and use
-a System on chip (SoC) and MIPS architecture.
+Our project allows a real CPU simulation in C++, using  Concurrent, Oriented Objects and Generic programming
+also the Standard Library C++ to achieve our purpose we need to define all parts of CPU and use
+a System on chip (SoC), all of that through MIPS architecture.
+In addition, to managed the efficient simulation we implement a TDD (Test Driven Development), that allows to
+"shape" CPU and do. 
+
+ ![Figure1](instructionRIJ)
+ 
 ### CPU COMPONENTS
 #### System on Chip
 Is a technology of embedded systems, it improves the integration in only one chips, reduces the costs and build
@@ -52,11 +59,11 @@ and get a sight of LED ON/OFF and read an input.
 ## Installation
 
 
-
-
-
 ## Usage
+CPU simulator allows modify and read data memory through the hexadecimal input, it will be 
+decode to instruction by a MIPS PARSER, once it has the instruction Register, Immediate or Jump form type.  
 
+ 
 ### Case 1: TURN ON LED
 #### C Code
 
@@ -147,3 +154,7 @@ and get a sight of LED ON/OFF and read an input.
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
+
+## References
+
+
