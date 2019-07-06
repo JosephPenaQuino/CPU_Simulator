@@ -13,15 +13,10 @@ Our project allows a real CPU simulation in C++, using  Concurrent, Oriented Obj
 also the Standard Library C++ to achieve our purpose we need to define all parts of CPU and use
 a System on chip (SoC), all of that through MIPS architecture.
 In addition, to managed the efficient simulation we implement a TDD (Test Driven Development), that allows to
-"shape" CPU and do. 
+"shape" CPU and do funcionalities like turn on LED or read PIN.
 
-  ![main_diagram](https://user-images.githubusercontent.com/49255376/60749363-87775e00-9f5e-11e9-8046-d6c1f9779be5.PNG)
-  
-  *Figure 2* The diagram shows hardware parts of System on Chip(SoC),
-  later it will be a specific explanation. 
-   
-  
 ### CPU COMPONENTS
+
 #### System on Chip
 Is a technology of embedded systems, it improves the integration in only one chips, reduces the costs and build
 a faster systems.
@@ -39,6 +34,12 @@ In this project we use a Microprocessor without Interlocked Pipelined Stages (MI
 it is a General purpose input/output(GPIO).
 * General Purpose Input/Output (GPIO):  Is a digital pin on a integrated circuit controllable by the user at run time,
 GPIO is implemented and defined by the designer.
+
+  ![main_diagram](https://user-images.githubusercontent.com/49255376/60749363-87775e00-9f5e-11e9-8046-d6c1f9779be5.PNG)
+  
+  *Figure 2* The diagram shows hardware parts of System on Chip(SoC),
+  later it will be a specific explanation. 
+   
 
 ### MIPS
 Microprocessor without Interlocked Pipelined Stages (MIPS) is a Reduced instruction set computer(RISC), it means a architecture of 
@@ -161,9 +162,12 @@ and get a sight of LED ON/OFF and read an input.
     3402000a
     3c100000
 
+
+## Unified Modeling Language
+Check out in :https://drive.google.com/file/d/106UfCNr14bwet5pv2B7kBiawSNoT3an4/view?usp=sharing
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
 Please make sure to update tests as appropriate.
 
 ## References
