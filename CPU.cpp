@@ -32,13 +32,17 @@ CPU_state CPU::execute_instruction()
 {
     Instruction * current_instruction = this->get_instr();
     current_instruction->apply(*this);
-
-    return CPU_state();
+    CPU_state my_result;
+    my_result.error = false;
+    my_result.any_change = false;
+    return my_result;
 }
 
-Instruction * CPU::get_instr() {
-    Instruction *instr = prog_mem.get_instructions(program_counter);
-    program_counter++;
+Instruction * CPU::get_instr()
+{
+    if (program_counter >= prog_mem_size)
+        program_counter = 0;
+    Instruction * instr = prog_mem.get_instructions(program_counter);
     return instr;
 }
 
@@ -75,4 +79,14 @@ void CPU::load_instructions(std::vector<Instruction*> program)
     prog_mem.load_instructions(program);
 }
 
-CPU_state::CPU_state() : error{true}, any_change{false} {}
+void CPU::increment_pc(int add)
+{
+    program_counter = program_counter + add;
+}
+
+void CPU::show_instructions()
+{
+    prog_mem.show();
+}
+
+CPU_state::CPU_state() : error{false}, any_change{false} {}

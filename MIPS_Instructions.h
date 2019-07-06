@@ -66,4 +66,11 @@ public:
     void apply(CPU &my_cpu) override;
 };
 
+class Instruction_nop: public Instruction_R
+{
+public:
+    Instruction_nop();
+    void apply(CPU &my_cpu) override;
+};
+
 #endif //CPU_SIMULATOR_MIPS_INSTRUCTIONS_H

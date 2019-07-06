@@ -34,17 +34,14 @@ char Instruction_J::type() {
 
 Instruction_add::Instruction_add(uint32_t Rs, uint32_t Rt, uint32_t Rd) :
         Instruction_R(0b000000, Rs, Rt, Rd, 0b00000, 0b100000) {}
-
 void Instruction_add::apply(CPU &my_cpu)
 {
     const int max_result = (const int)pow(2, 5) - 1;
-
     uint32_t sum = my_cpu.get_reg(comp.comp_r.Rs) + my_cpu.get_reg(comp.comp_r.Rt);
-
     while (sum > max_result)
         sum = sum - max_result;
-
     my_cpu.set_reg(comp.comp_r.Rd, sum);
+    my_cpu.increment_pc(1);
 }
 
 // Store Word: 43
@@ -53,6 +50,7 @@ void Instruction_sw::apply(CPU &my_cpu)
 {
     uint32_t address = my_cpu.get_reg(comp.comp_i.Rs) + my_cpu.get_reg(comp.comp_i.comp_const);
     my_cpu.set_data(address, my_cpu.get_reg(comp.comp_i.Rt));
+    my_cpu.increment_pc(1);
 }
 
 // Load Word: 35
@@ -62,6 +60,7 @@ void Instruction_lw::apply(CPU &my_cpu)
     uint32_t address = my_cpu.get_reg(comp.comp_i.Rs) + my_cpu.get_reg(comp.comp_i.comp_const);
     uint32_t value = my_cpu.get_data(address);
     my_cpu.set_reg(my_cpu.get_reg(comp.comp_i.Rt), value);
+    my_cpu.increment_pc(1);
 }
 
 // Load Upper Immediate: 15
@@ -70,6 +69,7 @@ void Instruction_lui::apply(CPU &my_cpu)
 {
     uint32_t value = comp.comp_i.comp_const * (uint32_t)pow(2, 16);
     my_cpu.set_reg(comp.comp_i.Rt, value);
+    my_cpu.increment_pc(1);
 }
 
 // Or Immediate: 13
@@ -78,4 +78,12 @@ void Instruction_ori::apply(CPU &my_cpu)
 {
     uint32_t value = my_cpu.get_reg(comp.comp_i.Rt) | comp.comp_i.comp_const;
     my_cpu.set_reg(comp.comp_i.Rs, value);
+    my_cpu.increment_pc(1);
+}
+
+// No Operation: 0
+Instruction_nop::Instruction_nop() : Instruction_R(0,0,0,0,0,0){}
+void Instruction_nop::apply(CPU &my_cpu)
+{
+    my_cpu.increment_pc(1);
 }

@@ -2,6 +2,8 @@
 #define CPU_SIMULATOR_MEMORY_H
 
 #include <vector>
+#include <iostream>
+
 template<typename T>
 class Memory {
 private:
@@ -15,6 +17,7 @@ protected:
 
 public:
     explicit Memory(int size);
+    void show();
 
 };
 
@@ -33,10 +36,20 @@ void Memory<T>::store(int address, T value)
 template<typename T>
 T Memory<T>::load(int address)
 {
-    return my_data[address];
+    if (address < size && address >= 0)
+        return my_data[0];
+    else
+        return T();
 }
 
-
+template<typename T>
+void Memory<T>::show()
+{
+    for(int i = 0; i < 5; ++i)
+    {
+        std::cout << my_data[i]->get_id() << std::endl;
+    }
+}
 
 
 #endif //CPU_SIMULATOR_MEMORY_H

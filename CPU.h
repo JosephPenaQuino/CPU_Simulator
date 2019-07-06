@@ -50,6 +50,10 @@ public:
 
     void print_data_memory();
     void load_instructions(std::vector<Instruction*> program);
+
+    void increment_pc(int add);
+
+    void show_instructions();
 };
 
 #endif //CPU_SIMULATOR_CPU_H

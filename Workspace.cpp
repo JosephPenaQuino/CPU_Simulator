@@ -23,9 +23,12 @@ SoC *Workspace::get_SoC(int key)
 bool Workspace::execute_all(double time_lapse, int frequency)
 {
     std::list<SoC*>::iterator current_SoC;
-
+    bool is_any_error = false;
     for (current_SoC = SoC_list.begin(); current_SoC != SoC_list.end(); ++current_SoC)
-        (*current_SoC)->execute(time_lapse, frequency);
-
+    {
+        is_any_error = (*current_SoC)->execute(time_lapse, frequency);
+        if (is_any_error)
+            return false;
+    }
     return true;
 }

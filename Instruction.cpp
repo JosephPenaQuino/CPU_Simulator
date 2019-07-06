@@ -8,3 +8,8 @@ char Instruction::type() {
 
 void Instruction::apply(CPU &my_cpu) {}
 
+uint32_t Instruction::get_id()
+{
+    return op_code;
+}
+

@@ -48,6 +48,7 @@ public:
     explicit Instruction(uint32_t op_code);
     virtual void apply(CPU &my_cpu);
     virtual char type();
+    uint32_t get_id();
 };
 
 

@@ -34,8 +34,9 @@ void SoC::int_wire(int cpu_reg, int per_reg)
 
 bool SoC::execute(double time_lapse, int freq)
 {
+
     if (CPUs.empty())
-        return false;
+        return true;
 
     int num_cycles = (int)(time_lapse*freq);
     std::vector<CPU*>::iterator current_CPU;
@@ -46,8 +47,8 @@ bool SoC::execute(double time_lapse, int freq)
         {
             cpu_state = (*current_CPU)->execute_instruction();
             if (cpu_state.error)
-                return false;
+                return true;
         }
 
-    return true;
+    return false;
 }

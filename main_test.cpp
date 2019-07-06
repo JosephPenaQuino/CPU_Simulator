@@ -17,9 +17,12 @@ SCENARIO("Working on a simple MIPS processor that turns-on a LED")
         program.emplace_back(new Instruction_sw(0x09, 0x0A, 0));        // MEM[reg[0x0A]] <- reg[0x0A] + 0
         my_cpu.load_instructions(program);
 
+        my_cpu.show_instructions();
+
         std::cout << "---------------------------" << std::endl;
         std::cout << "Data Memory before program:" << std::endl;
         my_cpu.print_data_memory();
+
         my_cpu.execute_instruction();
         my_cpu.execute_instruction();
         my_cpu.execute_instruction();
@@ -66,7 +69,6 @@ SCENARIO("Working on a simple MIPS processor that turns-on a LED")
             my_soc.ext_wire(3, my_gpio.pin_id(2));
             my_soc.ext_wire(4, my_gpio.pin_id(3));
             my_soc.ext_wire(5, my_gpio.pin_id(4));
-
 
             THEN("A program is loaded in the program memory of the SoC")
             {

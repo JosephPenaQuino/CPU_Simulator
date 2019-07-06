@@ -21,7 +21,10 @@ read_mem<T>::read_mem(int size) : Memory<T>(size) {}
 template<typename T>
 T read_mem<T>::get_instructions(int address)
 {
-    return Memory<T>::load(address);
+    if (address < size && address >= 0)
+        return Memory<T>::load(address);
+    else
+        return T();
 }
 
 template<typename T>
