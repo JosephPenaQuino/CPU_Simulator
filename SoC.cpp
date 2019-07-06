@@ -65,6 +65,7 @@ bool SoC::execute(double time_lapse, int freq)
     for (int i = 0; i < num_cycles; ++i)
         for (current_CPU = CPUs.begin(); current_CPU < CPUs.end(); current_CPU++)
         {
+            usleep(1000000/freq);
             cpu_state = (*current_CPU)->execute_instruction();
             if (cpu_state.error)
                 return true;

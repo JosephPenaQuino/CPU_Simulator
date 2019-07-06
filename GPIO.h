@@ -8,9 +8,10 @@
 class GPIO : public Peripheral
 {
 private:
+    const int number_pins;
 
 public:
-    GPIO(const int number_ports, const int number_pins_per_port[]);
+    GPIO(const int number_pins);
     int pin_id(int reg);
 };
 

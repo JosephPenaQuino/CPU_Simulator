@@ -97,13 +97,11 @@ SCENARIO("Working on a simple MIPS processor that turns-on a LED")
 
         WHEN("The SoC owns a MIPS processor and a GPIO")
         {
-            const int number_ports = 1;
-            const int number_of_pins_per_port[number_ports] = {5};
             const int data_memory_size = 2000;
             const int program_memory_size = 1600;
 
             MIPS_CPU my_cpu(data_memory_size, program_memory_size);
-            GPIO my_gpio(number_ports, number_of_pins_per_port);
+            GPIO my_gpio(number_pins);
 
             my_soc.add(&my_cpu);
             my_soc.add(&my_gpio);
@@ -127,7 +125,7 @@ SCENARIO("Working on a simple MIPS processor that turns-on a LED")
             {
                 const std:: string code_path = "code.hex";
                 my_soc.load_program(code_path);
-                int time_lapse = 10;
+                int time_lapse = 1;
                 int frequency = 1000;
                 REQUIRE(my_workspace.get_size() == 1);
                 REQUIRE(my_workspace.get_SoC(0) == &my_soc);

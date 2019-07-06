@@ -9,6 +9,7 @@
 #include <iterator>
 #include <fstream>
 #include "MIPS_Instructions.h"
+#include <unistd.h>
 
 class SoC
 {
