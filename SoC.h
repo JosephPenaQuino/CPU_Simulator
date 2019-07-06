@@ -7,6 +7,8 @@
 #include <string>
 #include <vector>
 #include <iterator>
+#include <fstream>
+#include "MIPS_Instructions.h"
 
 class SoC
 {
@@ -23,5 +25,13 @@ public:
     void load_program(std::string path);
     bool execute(double time_lapse, int freq);
 };
+
+inline static uint32_t get_opcode(uint32_t hex_instruction);
+Instruction * get_instruction_from(uint32_t hex_instruction);
+inline static uint32_t get_rs(uint32_t hex_code);
+inline static uint32_t get_rt(uint32_t hex_code);
+inline static uint32_t get_rd(uint32_t hex_code);
+inline static uint32_t get_comp_const(uint32_t hex_code);
+
 
 #endif //CPU_SIMULATOR_SOC_H

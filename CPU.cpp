@@ -89,4 +89,9 @@ void CPU::show_instructions()
     prog_mem.show();
 }
 
+int CPU::type()
+{
+    return CPUId;
+}
+
 CPU_state::CPU_state() : error{false}, any_change{false} {}

@@ -37,7 +37,7 @@ template<typename T>
 T Memory<T>::load(int address)
 {
     if (address < size && address >= 0)
-        return my_data[0];
+        return my_data[address];
     else
         return T();
 }

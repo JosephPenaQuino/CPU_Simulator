@@ -32,6 +32,7 @@ char Instruction_J::type() {
     return 'J';
 }
 
+// Add: 0
 Instruction_add::Instruction_add(uint32_t Rs, uint32_t Rt, uint32_t Rd) :
         Instruction_R(0b000000, Rs, Rt, Rd, 0b00000, 0b100000) {}
 void Instruction_add::apply(CPU &my_cpu)

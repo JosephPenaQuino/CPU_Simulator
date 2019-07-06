@@ -17,7 +17,32 @@ SCENARIO("Working on a simple MIPS processor that turns-on a LED")
         program.emplace_back(new Instruction_sw(0x09, 0x0A, 0));        // MEM[reg[0x0A]] <- reg[0x0A] + 0
         my_cpu.load_instructions(program);
 
-        my_cpu.show_instructions();
+        std::cout << "---------------------------" << std::endl;
+        std::cout << "Data Memory before program:" << std::endl;
+        my_cpu.print_data_memory();
+
+        my_cpu.execute_instruction();
+        my_cpu.execute_instruction();
+        my_cpu.execute_instruction();
+        my_cpu.execute_instruction();
+        my_cpu.execute_instruction();
+
+        std::cout << "---------------------------" << std::endl;
+        std::cout << "Data Memory after program:" << std::endl;
+        my_cpu.print_data_memory();
+    }
+
+    GIVEN("Test Parser from hex code to instructions")
+    {
+        const int data_memory_size = 16;
+        const int program_memory_size = 32;
+        const int number_pins = 8;
+        const std::string path_code = "../test.hex";
+        MIPS_CPU my_cpu(data_memory_size, program_memory_size);
+        SoC my_soc(number_pins);
+        my_soc.add(&my_cpu);
+
+        my_soc.load_program(path_code);
 
         std::cout << "---------------------------" << std::endl;
         std::cout << "Data Memory before program:" << std::endl;
@@ -28,6 +53,34 @@ SCENARIO("Working on a simple MIPS processor that turns-on a LED")
         my_cpu.execute_instruction();
         my_cpu.execute_instruction();
         my_cpu.execute_instruction();
+
+
+        std::cout << "---------------------------" << std::endl;
+        std::cout << "Data Memory after program:" << std::endl;
+        my_cpu.print_data_memory();
+    }
+
+    GIVEN("Test SoC::execute(time_lapse, frequency)")
+    {
+        const int data_memory_size = 16;
+        const int program_memory_size = 32;
+        const int number_pins = 8;
+        const int time_lapse = 1;
+        const int freq = 100;
+        const std::string path_code = "../test.hex";
+        MIPS_CPU my_cpu(data_memory_size, program_memory_size);
+        SoC my_soc(number_pins);
+        my_soc.add(&my_cpu);
+
+        my_soc.load_program(path_code);
+
+        std::cout << "---------------------------" << std::endl;
+        std::cout << "Data Memory before program:" << std::endl;
+        my_cpu.print_data_memory();
+
+        my_soc.execute(time_lapse, freq);
+
+
         std::cout << "---------------------------" << std::endl;
         std::cout << "Data Memory after program:" << std::endl;
         my_cpu.print_data_memory();
@@ -80,7 +133,7 @@ SCENARIO("Working on a simple MIPS processor that turns-on a LED")
                 REQUIRE(my_workspace.get_SoC(0) == &my_soc);
                 REQUIRE(my_cpu.get_data_mem_size() == 2000);
                 REQUIRE(my_cpu.get_prog_mem_size() == 1600);
-//                REQUIRE(my_workspace.execute_all(time_lapse, frequency));
+                REQUIRE(my_workspace.execute_all(time_lapse, frequency));
             }
         }
     }

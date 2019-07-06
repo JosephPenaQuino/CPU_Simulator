@@ -5,7 +5,6 @@
 #include <string>
 #include "HardwareBlock.h"
 #include "Instruction.h"
-//class Instruction;
 #include "read_write_mem.h"
 #include "read_mem.h"
 
@@ -40,6 +39,7 @@ public:
     int get_prog_mem_size();
     CPU_state execute_instruction();
     Instruction * get_instr();
+    int type() override ;
 
     friend void apply(CPU * my_cpu);
 
