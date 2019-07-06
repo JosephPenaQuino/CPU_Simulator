@@ -1,7 +1,13 @@
 # Central Processing Unit Simulator
 
 Central processing unit (CPU) Simulator is the final project of Objected Oriented Programming Course at UTEC.
-![black_box_diagram](https://user-images.githubusercontent.com/49255376/60748096-0fa23700-9f50-11e9-9201-aaab1c959b25.PNG)
+
+ ![black_box_diagram](https://user-images.githubusercontent.com/49255376/60748096-0fa23700-9f50-11e9-9201-aaab1c959b25.PNG)
+
+*Figure 1* It is a block diagram that shows a generic sight 
+including a binary code and architecture design as 
+an inputs and functionality output.
+
 ## Background
 Our project allows a real CPU simulation in C++, using  Concurrent, Oriented Objects and Generic programming
 also the Standard Library C++ to achieve our purpose we need to define all parts of CPU and use
@@ -9,7 +15,10 @@ a System on chip (SoC), all of that through MIPS architecture.
 In addition, to managed the efficient simulation we implement a TDD (Test Driven Development), that allows to
 "shape" CPU and do. 
 
- ![instructionRIJ](https://user-images.githubusercontent.com/49255376/60747787-9275c280-9f4d-11e9-9024-dfedc6062ba4.png)
+
+
+
+    ![instructionRIJ](https://user-images.githubusercontent.com/49255376/60747787-9275c280-9f4d-11e9-9024-dfedc6062ba4.png)
 
  
 ### CPU COMPONENTS
