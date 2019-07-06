@@ -161,5 +161,10 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## References
+W/N (2017). MIPS instruction classified [*Figure 3*]. Recovered from  https://www.researchgate.net/figure/Instruction-formats-for-MIPS-architecture-1_fig2_228942202
 
+W/N (2016). MIPS instruction set. Recovered from http://www.dsi.unive.it/~gasparetto/materials/MIPS_Instruction_Set.pdf
 
+Digital citizen (2017). What is a SoC? [Article]. Recovered from https://www.digitalcitizen.life/soc-system-on-chip
+ 
+Tutorials point (2017). Computer fundamentals [Article] Recovered from https://www.tutorialspoint.com/computer_fundamentals/computer_cpu
