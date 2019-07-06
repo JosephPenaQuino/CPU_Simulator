@@ -9,7 +9,7 @@ including a binary code and architecture design as
 an inputs and functionality output.
 
 ## Background
-Our project allows a real CPU simulation in C++, using  Concurrent, Oriented Objects and Generic programming
+Our project allows a real CPU simulation in C++, using Oriented Objects and Generic programming
 also the Standard Library C++ to achieve our purpose we need to define all parts of CPU and use
 a System on chip (SoC), all of that through MIPS architecture.
 In addition, to managed the efficient simulation we implement a TDD (Test Driven Development), that allows to
