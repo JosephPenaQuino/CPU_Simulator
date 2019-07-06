@@ -16,11 +16,11 @@ In addition, to managed the efficient simulation we implement a TDD (Test Driven
 "shape" CPU and do. 
 
   ![main_diagram](https://user-images.githubusercontent.com/49255376/60749363-87775e00-9f5e-11e9-8046-d6c1f9779be5.PNG)
-
-
-  ![instructionRIJ](https://user-images.githubusercontent.com/49255376/60747787-9275c280-9f4d-11e9-9024-dfedc6062ba4.png)
-
- 
+  
+  *Figure 2* The diagram shows hardware parts of System on Chip(SoC),
+  later it will be a specific explanation. 
+   
+  
 ### CPU COMPONENTS
 #### System on Chip
 Is a technology of embedded systems, it improves the integration in only one chips, reduces the costs and build
@@ -47,11 +47,21 @@ There are multiple versions of MIPS. In this project we use a 32 bit.
 
 The role that MIPS architecture assumes in the project is essential to give a interlacing architecture CPU
 to SoC, using a MIPS instructions set 32 bits.
+
+CPU simulator allows modify and read data memory through the hexadecimal input, it will be 
+decode to instruction by a MIPS PARSER, once it has the instruction Register, Immediate or Jump form type (see Figure 3) .  
+
+
+  ![instructionRIJ](https://user-images.githubusercontent.com/49255376/60747787-9275c280-9f4d-11e9-9024-dfedc6062ba4.png)
+
+
+*Figure 3*. To do operating the CPU, it is necessary to use 32-bit Instruction Format: Register, Immediate and Jump instructions.
  
 ### Assembly
 It is a low programming language, it is composed by instructions directly to hardware blocks or machine architecture
 It has a one statement per instruction,  the statements are directives to locate the block to change register by an instruction.
-In addition of term, each assembly language is specific to particular computer architecture and operating system.
+In addition of term, each assembly language is specific to particular computer architecture and operating system, thus, we use a
+MIPS instruction set.
 
 ### Simulators
 
@@ -70,14 +80,9 @@ and get a sight of LED ON/OFF and read an input.
 
 
 ## Usage
-CPU simulator allows modify and read data memory through the hexadecimal input, it will be 
-decode to instruction by a MIPS PARSER, once it has the instruction Register, Immediate or Jump form type.  
 
  
-### Case 1: TURN ON LED
-#### C Code
-
-    
+### Case 1: Turn on LED   
 #### Assembly
     ; -------------------------------------------
     ;
@@ -111,22 +116,7 @@ decode to instruction by a MIPS PARSER, once it has the instruction Register, Im
     3c080000
     3428000e
     ad280000
-
-### Case 2 : Modify data memory
-
-#### C Code
-
-
-#### Assembly
-
-
-#### Binary Code
-
-
-### Case 3 : Read Pin
-
-#### C Code
-
+### Case 2 : Read Pin
 
 #### Assembly
     ; -------------------------------------------
