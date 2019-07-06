@@ -37,8 +37,7 @@ GPIO is implemented and defined by the designer.
 
   ![main_diagram](https://user-images.githubusercontent.com/49255376/60749363-87775e00-9f5e-11e9-8046-d6c1f9779be5.PNG)
   
-  *Figure 2* The diagram shows hardware parts of System on Chip(SoC),
-  later it will be a specific explanation. 
+  *Figure 2* The diagram shows hardware parts of System on Chip(SoC).
    
 
 ### MIPS
