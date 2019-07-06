@@ -63,6 +63,9 @@ It has a one statement per instruction,  the statements are directives to locate
 In addition of term, each assembly language is specific to particular computer architecture and operating system, thus, we use a
 MIPS instruction set.
 
+![assembly_usage](https://user-images.githubusercontent.com/49255376/60750197-a4b22980-9f6a-11e9-9708-f88f65152439.png)
+
+
 ### Simulators
 
 
