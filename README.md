@@ -33,11 +33,11 @@ This block is subdivided in hardware blocks depending the type of SoC.
 To achieve our purposes, we implement a CPU, RM and RWM memories and Peripherals.
 * Central processing unit (CPU): Is the electronic circuitry within a computer that control instructions and my_data flow.
 In this project we use a Microprocessor without Interlocked Pipelined Stages (MIPS).
-* Read memory (RM): It is a memory segment that only allows to read memory by  my_data bus addresses.
-* Read write memory (RWM): It is a memory segment that can be read from and written too by my_data bus addresses.
+* Read Memory (RM): It is a memory segment that only allows to read memory by  my_data bus addresses.
+* Read Write Memory (RWM): It is a memory segment that can be read from and written too by my_data bus addresses.
 * Peripheral: Is a hardware input or output device, that gives a computer additional functionality, the implement of this
 it is a General purpose input/output(GPIO).
-* General purpose input/output (GPIO):  Is a digital pin on a integrated circuit controllable by the user at run time,
+* General Purpose Input/Output (GPIO):  Is a digital pin on a integrated circuit controllable by the user at run time,
 GPIO is implemented and defined by the designer.
 
 ### MIPS
@@ -55,7 +55,7 @@ decode to instruction by a MIPS PARSER, once it has the instruction Register, Im
   ![instructionRIJ](https://user-images.githubusercontent.com/49255376/60747787-9275c280-9f4d-11e9-9024-dfedc6062ba4.png)
 
 
-*Figure 3*. To do operating the CPU, it is necessary to use 32-bit Instruction Format: Register, Immediate and Jump instructions.
+*Figure 3.* To do operating the CPU, it is necessary to use 32-bit Instruction Format: Register, Immediate and Jump instructions.
  
 ### Assembly
 It is a low programming language, it is composed by instructions directly to hardware blocks or machine architecture
@@ -64,7 +64,9 @@ In addition of term, each assembly language is specific to particular computer a
 MIPS instruction set.
 
 ![assembly_usage](https://user-images.githubusercontent.com/49255376/60750197-a4b22980-9f6a-11e9-9708-f88f65152439.png)
-
+ 
+*Figure 4.* It represents an assembly program code that load and store a word in a data and program memory by decode 
+to binary.
 
 ### Simulators
 
