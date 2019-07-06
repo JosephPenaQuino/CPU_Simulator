@@ -70,7 +70,13 @@ to binary.
 
 ### Simulators
 
+![before_simulate](https://user-images.githubusercontent.com/49255376/60756911-32246680-9fc9-11e9-8c71-9612d6094c82.PNG)
 
+*Figure 5.* It the state data memory before to put a data. Using a Test Driven Development.
+
+![after_simulate](https://user-images.githubusercontent.com/49255376/60756931-816a9700-9fc9-11e9-920c-8b132d6206e8.PNG)
+
+*Figure 6.* It the state data memory after to put a data. Using a Test Driven Development.
 
 ## Objectives
 
